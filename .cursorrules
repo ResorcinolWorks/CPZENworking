@@ -1,0 +1,31 @@
+# This file contains rules for the Cursor AI assistant to follow for this project.
+
+# General
+- When making changes, adhere to the existing code style and conventions.
+- Keep functions small and focused on a single responsibility.
+- Add comments only for complex logic that isn't self-explanatory.
+
+# Frontend (React, TypeScript, Tailwind CSS)
+- The frontend is located in the `cpzenfrontend` directory.
+- Use components from the `shadcn/ui` library located in `cpzenfrontend/src/components/ui` for new UI elements to maintain consistency.
+- Icons should be imported from `lucide-react`.
+- State management should be handled with React Context API where appropriate, see `cpzenfrontend/src/context/ProgressContext.tsx` for an example.
+- All API calls to the backend should be centralized in `cpzenfrontend/src/lib/api.ts`.
+- Use Tailwind CSS for styling. Avoid writing plain CSS files.
+- Follow the component structure seen in `cpzenfrontend/src/components`.
+
+# Backend (Node.js, Express, TypeScript)
+- The backend is located in the `cpzenbackend` directory.
+- Follow the existing project structure:
+  - `src/controllers`: API route handlers.
+  - `src/services`: Business logic.
+  - `src/models`: Database-related logic and types.
+  - `src/routes`: Express route definitions.
+  - `src/middleware`: Express middleware.
+- Database interactions are with a PostgreSQL database. SQL queries can be found in `database.sql` and models.
+- Authentication is handled by Clerk. Use the Clerk SDK for any auth-related tasks. See `cpzenbackend/src/middleware/auth.ts` for an example of protected routes.
+- Webhooks from Clerk are handled in `cpzenbackend/src/controllers/WebhookController.ts`.
+
+# Commits & PRs
+- Write clear and concise commit messages.
+- When submitting a pull request, provide a clear description of the changes. 

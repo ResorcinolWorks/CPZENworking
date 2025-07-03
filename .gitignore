@@ -1,0 +1,36 @@
+# Dependencies
+/node_modules
+/cpzenfrontend/node_modules
+/cpzenbackend/node_modules
+
+# Build artifacts
+/dist
+/cpzenfrontend/dist
+/cpzenbackend/dist
+
+# Environment variables
+.env
+.env*.local
+/cpzenfrontend/.env
+/cpzenbackend/.env
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# OS-specific
+.DS_Store
+Thumbs.db
+
+# IDE settings
+.vscode/
+.idea/
+
+# Other
+*.bak
+coverage
+.mcp/ 
