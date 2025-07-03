@@ -44,16 +44,17 @@ class ApiClient {
     options: RequestInit = {},
     token?: string
   ): Promise<T> {
-    const headers: HeadersInit = {
+    const headers = new Headers({
       'Content-Type': 'application/json',
       ...options.headers,
-    };
+    });
 
     if (token) {
-      headers.Authorization = `Bearer ${token}`;
+      headers.append('Authorization', `Bearer ${token}`);
     }
 
-    const response = await fetch(`${API_BASE_URL}${url}`, {
+    const finalUrl = new URL(url, API_BASE_URL);
+    const response = await fetch(finalUrl.href, {
       ...options,
       headers,
     });
