@@ -1,4 +1,7 @@
 {
+  "scripts": {
+    "type-check": "cd cpzenfrontend && npm run type-check && cd .. && cd cpzenbackend && npm run type-check"
+  },
   "dependencies": {
     "@clerk/clerk-react": "^5.32.0",
     "@types/express": "^5.0.3",

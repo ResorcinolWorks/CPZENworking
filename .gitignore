@@ -34,3 +34,5 @@ Thumbs.db
 *.bak
 coverage
 .mcp/ 
+# Dependencies
+node_modules/
