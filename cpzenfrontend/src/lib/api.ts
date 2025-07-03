@@ -1,4 +1,5 @@
-const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:3001/api';
+const API_HOST = import.meta.env.VITE_API_URL || 'http://localhost:3001';
+const API_BASE_URL = `${API_HOST}/api`;
 
 export interface Topic {
   id: string;
@@ -53,8 +54,7 @@ class ApiClient {
       headers.append('Authorization', `Bearer ${token}`);
     }
 
-    const finalUrl = new URL(url, API_BASE_URL);
-    const response = await fetch(finalUrl.href, {
+    const response = await fetch(`${API_BASE_URL}${url}`, {
       ...options,
       headers,
     });
