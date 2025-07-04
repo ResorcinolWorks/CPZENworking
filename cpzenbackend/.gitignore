@@ -25,4 +25,17 @@ lerna-debug.log*
 *.ntvs*
 *.njsproj
 *.sln
+*.sw?
+
+# Misc
+.cache
+.tmp
+
+# Editor directories and files
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
 *.sw? 
