@@ -11,7 +11,7 @@ export const Footer = () => {
 				</p>
 				<div className="flex items-center gap-4">
 					<a
-						href="https://twitter.com/your-twitter"
+						href="https://twitter.com/ResorcinolWorks"
 						target="_blank"
 						rel="noopener noreferrer"
 						aria-label="Twitter"
