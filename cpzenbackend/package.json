@@ -1,6 +1,7 @@
 {
   "name": "cpzen-backend",
   "version": "1.0.0",
+  "license": "MIT",
   "description": "Backend API for CpZen competitive programming learning platform",
   "main": "dist/index.js",
   "scripts": {
