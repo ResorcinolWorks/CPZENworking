@@ -53,8 +53,8 @@ const Reviews = () => {
 		<section className="py-24 sm:py-32">
 			<div className="container">
 				<div className="text-center mb-16 max-w-3xl mx-auto">
-					<h2 className="text-4xl md:text-5xl font-bold mb-4 tracking-tight flex items-center justify-center gap-3 text-foreground">
-						<ThumbsUp className="h-8 w-8" strokeWidth={2.5} />
+					<h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 tracking-tight flex items-center justify-center gap-3 text-foreground">
+						<ThumbsUp className="h-7 w-7 sm:h-8 sm:w-8" strokeWidth={2.5} />
 						Loved by <span className="text-primary">Coders</span> Everywhere
 					</h2>
 					<p className="text-lg text-foreground tracking-tight">

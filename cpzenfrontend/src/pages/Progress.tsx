@@ -25,7 +25,7 @@ const Progress = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
-          <Button asChild variant="ghost" className="mb-8 hover:bg-transparent">
+          <Button asChild variant="ghost" className="mb-8">
             <Link to="/dashboard" className="flex items-center gap-1 text-foreground hover:text-foreground transition-colors">
               <ArrowLeft className="mr-1 h-4 w-4" />
               Back to Dashboard

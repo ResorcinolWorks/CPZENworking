@@ -1,10 +1,12 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import { motion, Variants } from "framer-motion";
+import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { api, ProgressStats, UserNote } from "@/lib/api";
 import { useProgress } from "@/context/ProgressContext";
 import { Skeleton } from "@/components/ui/skeleton";
-import { User, CheckCircle, BarChart, FileText, LayoutDashboard } from "lucide-react";
+import { User, CheckCircle, BarChart, FileText, LayoutDashboard, Rocket } from "lucide-react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Progress } from "@/components/ui/progress";
 import { useAuth, useUser } from "@clerk/clerk-react";
@@ -64,13 +66,22 @@ const Dashboard = () => {
         variants={FADE_UP_ANIMATION_VARIANTS}
         className="mb-8"
       >
-        <h1 className="text-4xl font-bold tracking-tight flex items-center gap-3">
-          <LayoutDashboard className="h-8 w-8" />
-          Dashboard
-        </h1>
-        <p className="text-foreground mt-1 tracking-tight">
-          Welcome back, {user?.firstName || "Coder"}! Let's get learning.
-        </p>
+        <div className="flex justify-between items-center">
+          <div>
+            <h1 className="text-4xl font-bold tracking-tight flex items-center gap-3">
+              <LayoutDashboard className="h-8 w-8" />
+              Dashboard
+            </h1>
+            <p className="text-foreground mt-1 tracking-tight">
+              Welcome back, {user?.firstName || "Coder"}! Let's get learning.
+            </p>
+          </div>
+          <Button asChild>
+            <Link to="/progress">
+              <Rocket className="mr-2 h-4 w-4" /> Go to Progress
+            </Link>
+          </Button>
+        </div>
       </motion.div>
       
       <motion.div 
