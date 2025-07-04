@@ -26,7 +26,7 @@ const Progress = () => {
           transition={{ duration: 0.5 }}
         >
           <Button asChild variant="ghost" className="mb-8 hover:bg-transparent">
-            <Link to="/dashboard" className="flex items-center gap-1 text-muted-foreground hover:text-foreground transition-colors">
+            <Link to="/dashboard" className="flex items-center gap-1 text-foreground hover:text-foreground transition-colors">
               <ArrowLeft className="mr-1 h-4 w-4" />
               Back to Dashboard
             </Link>
@@ -37,7 +37,7 @@ const Progress = () => {
               <ListChecks className="h-8 w-8" />
               Your Roadmap
             </h1>
-            <p className="mt-2 text-muted-foreground tracking-tight">
+            <p className="mt-2 text-foreground tracking-tight">
               Here are all the topics to master your skills. Checked topics are saved.
             </p>
             <div className="mt-4 text-lg tracking-tight">

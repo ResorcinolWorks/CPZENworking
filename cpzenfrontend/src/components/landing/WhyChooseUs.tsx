@@ -1,5 +1,6 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { CheckCircle2, BookOpen, BarChart, NotebookText, Gem } from "lucide-react";
+import { motion } from "framer-motion";
 
 const features = [
 	{
@@ -30,14 +31,14 @@ const features = [
 
 const WhyChooseUs = () => {
 	return (
-		<section className="py-24 sm:py-32 bg-muted/30">
+		<section id="why-choose-us" className="py-20 md:py-32">
 			<div className="container">
 				<div className="text-center mb-16 max-w-3xl mx-auto">
-					<h2 className="text-4xl md:text-5xl font-bold mb-4 tracking-tight flex items-center justify-center gap-3 text-muted-foreground">
-						<Gem className="h-8 w-8" />
-						An All-In-One <span className="text-foreground">Learning Platform</span>
+					<h2 className="text-4xl md:text-5xl font-bold mb-4 tracking-tight flex items-center justify-center gap-3 text-foreground">
+						<Gem className="h-8 w-8" strokeWidth={2.5} />
+						An All-In-One <span className="text-primary">Learning Platform</span>
 					</h2>
-					<p className="text-lg text-muted-foreground tracking-tight">
+					<p className="text-lg text-foreground tracking-tight">
 						We have everything you need to excel in your competitive programming
 						journey, from curated roadmaps to advanced progress tracking.
 					</p>
@@ -47,7 +48,7 @@ const WhyChooseUs = () => {
 					{features.map((feature) => (
 						<Card
 							key={feature.title}
-							className="bg-secondary/50 shadow-lg hover:shadow-xl transition-shadow duration-300 hover:scale-[1.02]"
+							className="bg-secondary/50 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
 						>
 							<CardContent className="p-6 h-full flex flex-col gap-2">
 								<div className="flex items-center gap-4 mb-2">
@@ -58,7 +59,7 @@ const WhyChooseUs = () => {
 										{feature.title}
 									</h3>
 								</div>
-								<p className="text-muted-foreground tracking-tight">
+								<p className="text-foreground tracking-tight">
 									{feature.description}
 								</p>
 							</CardContent>

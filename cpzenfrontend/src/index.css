@@ -1,5 +1,4 @@
-@import url('https://fonts.cdnfonts.com/css/geist-sans');
-@import url('https://fonts.cdnfonts.com/css/geist-mono');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400..900&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -7,9 +6,6 @@
 
 @layer base {
   :root {
-    --font-geist-sans: 'Geist Sans', sans-serif;
-    --font-geist-mono: 'Geist Mono', monospace;
-
     --background: 0 0% 100%;
     --foreground: 240 10% 3.9%;
 
@@ -36,7 +32,7 @@
 
     --border: 240 5.9% 90%;
     --input: 240 5.9% 90%;
-    --ring: 240 10% 3.9%;
+    --ring: 0 0% 83.1%;
 
     --radius: 0.5rem;
   }
@@ -71,7 +67,7 @@
   
   body {
     @apply bg-background text-foreground tracking-tight;
-    font-family: var(--font-geist-sans);
+    font-family: "Inter", sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }

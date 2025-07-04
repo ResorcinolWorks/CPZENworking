@@ -78,25 +78,31 @@ export const TopicAccordion = ({
           </div>
         </AccordionTrigger>
         <AccordionContent className="p-4 pt-0 border-t">
-          <div className="flex justify-between items-start">
-            <p className="text-sm text-muted-foreground tracking-tight pt-2 max-w-xl">
-              {topic.description}
-            </p>
-            <div className="flex items-center gap-1">
+          <div className="grid md:grid-cols-3 gap-6 pt-4">
+            <div className="md:col-span-2">
+              <h4 className="font-semibold tracking-tight mb-2">Description</h4>
+              <p className="text-sm text-foreground tracking-tight">
+                {topic.description}
+              </p>
+            </div>
+            <div className="md:col-span-1 space-y-3">
+              <h4 className="font-semibold tracking-tight">Resources</h4>
               <Tooltip>
                 <TooltipTrigger asChild>
-                  <Button asChild variant="ghost" size="icon" className="h-9 w-9">
+                  <Button asChild variant="outline" className="w-full justify-start gap-2">
                     <a href={topic.link} target="_blank" rel="noopener noreferrer">
-                      <Youtube className="h-5 w-5" />
+                      <Youtube className="h-5 w-5" strokeWidth={2.5}/>
+                      <span>Watch Tutorial</span>
                     </a>
                   </Button>
                 </TooltipTrigger>
-                <TooltipContent><p>Watch Tutorial</p></TooltipContent>
+                <TooltipContent><p>Watch Tutorial on YouTube</p></TooltipContent>
               </Tooltip>
               <Dialog>
                 <DialogTrigger asChild>
-                  <Button variant="ghost" size="icon" className="h-9 w-9">
-                    <FileText className="h-5 w-5" />
+                  <Button variant="outline" className="w-full justify-start gap-2">
+                    <FileText className="h-5 w-5" strokeWidth={2.5}/>
+                    <span>Flashcard Notes</span>
                   </Button>
                 </DialogTrigger>
                 <DialogContent>
@@ -109,7 +115,7 @@ export const TopicAccordion = ({
             </div>
           </div>
           {topic.additional_links && topic.additional_links.length > 0 && (
-            <div className="mt-4">
+            <div className="mt-6">
               <h4 className="font-semibold tracking-tight mb-2">Additional Resources:</h4>
               <div className="flex flex-wrap gap-2">
                 {topic.additional_links.map((link, i) => (

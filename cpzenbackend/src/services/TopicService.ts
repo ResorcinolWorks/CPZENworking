@@ -84,7 +84,7 @@ const TOPICS: Topic[] = [
   {
     id: "trees",
     name: "Trees",
-    link: "https://youtu.be/HL5ouhfxlgk",
+    link: "https://www.youtube.com/playlist?list=PLauivoElc3ghxyYSr_sVnDUc_ynPk6iXE",
     difficulty: "Medium",
     rating: "1400-1600"
   },
@@ -119,7 +119,7 @@ const TOPICS: Topic[] = [
   {
     id: "binary-lifting-lca",
     name: "Binary Lifting & LCA",
-    link: "https://youtu.be/WXMnRa3NkTQ",
+    link: "https://www.youtube.com/playlist?list=PL-Jc9J83PIiGC6uQ2CjMhSaWAcmjbAQfp",
     difficulty: "Hard",
     rating: "1800+"
   }

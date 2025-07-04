@@ -68,7 +68,7 @@ const Dashboard = () => {
           <LayoutDashboard className="h-8 w-8" />
           Dashboard
         </h1>
-        <p className="text-muted-foreground mt-1 tracking-tight">
+        <p className="text-foreground mt-1 tracking-tight">
           Welcome back, {user?.firstName || "Coder"}! Let's get learning.
         </p>
       </motion.div>
@@ -86,9 +86,9 @@ const Dashboard = () => {
                 <AvatarImage src={user?.imageUrl} />
                 <AvatarFallback><User /></AvatarFallback>
               </Avatar>
-              <div>
-                <CardTitle className="tracking-tight">{user?.fullName || "Guest User"}</CardTitle>
-                <p className="text-sm text-muted-foreground tracking-tight">{user?.primaryEmailAddress?.emailAddress}</p>
+              <div className="w-0 flex-1">
+                <CardTitle className="tracking-tight truncate">{user?.fullName || "Guest User"}</CardTitle>
+                <p className="text-sm text-foreground tracking-tight truncate">{user?.primaryEmailAddress?.emailAddress}</p>
               </div>
             </CardHeader>
             <CardContent>
@@ -97,7 +97,7 @@ const Dashboard = () => {
               ) : (
                 <div className="space-y-2">
                   <div className="flex justify-between items-baseline">
-                    <span className="text-sm font-medium text-muted-foreground tracking-tight">Overall Progress</span>
+                    <span className="text-sm font-medium text-foreground tracking-tight">Overall Progress</span>
                     <span className="text-sm font-bold text-primary tracking-tight">{stats?.completedCount} / {stats?.totalTopics}</span>
                   </div>
                   <Progress value={stats?.completionPercentage || 0} className="h-3" />
@@ -127,21 +127,21 @@ const Dashboard = () => {
                   <div>
                     <div className="flex justify-between text-sm mb-1">
                       <span className="font-medium tracking-tight">Easy</span>
-                      <span className="text-muted-foreground tracking-tight">{stats?.completedByDifficulty.Easy}/{stats?.totalByDifficulty.Easy}</span>
+                      <span className="text-foreground tracking-tight">{stats?.completedByDifficulty.Easy}/{stats?.totalByDifficulty.Easy}</span>
                     </div>
                     <Progress value={stats ? (stats.completedByDifficulty.Easy / stats.totalByDifficulty.Easy) * 100 : 0} className="h-2" />
                   </div>
                   <div>
                     <div className="flex justify-between text-sm mb-1">
                       <span className="font-medium tracking-tight">Medium</span>
-                      <span className="text-muted-foreground tracking-tight">{stats?.completedByDifficulty.Medium}/{stats?.totalByDifficulty.Medium}</span>
+                      <span className="text-foreground tracking-tight">{stats?.completedByDifficulty.Medium}/{stats?.totalByDifficulty.Medium}</span>
                     </div>
                     <Progress value={stats ? (stats.completedByDifficulty.Medium / stats.totalByDifficulty.Medium) * 100 : 0} className="h-2" />
                   </div>
                   <div>
                     <div className="flex justify-between text-sm mb-1">
                       <span className="font-medium tracking-tight">Hard</span>
-                      <span className="text-muted-foreground tracking-tight">{stats?.completedByDifficulty.Hard}/{stats?.totalByDifficulty.Hard}</span>
+                      <span className="text-foreground tracking-tight">{stats?.completedByDifficulty.Hard}/{stats?.totalByDifficulty.Hard}</span>
                     </div>
                     <Progress value={stats ? (stats.completedByDifficulty.Hard / stats.totalByDifficulty.Hard) * 100 : 0} className="h-2" />
                   </div>
@@ -192,11 +192,11 @@ const Dashboard = () => {
                   notes.map((note) => (
                     <Card key={note.topicId} className="h-32 p-4 bg-secondary/50 transition-transform duration-300 hover:scale-105 flex flex-col">
                       <p className="font-bold text-sm mb-2 truncate" title={note.topicName}>{note.topicName}</p>
-                      <p className="text-xs text-muted-foreground line-clamp-3 flex-grow">{note.content}</p>
+                      <p className="text-xs text-foreground line-clamp-3 flex-grow">{note.content}</p>
                     </Card>
                   ))
                 ) : (
-                  <p className="text-muted-foreground col-span-full text-center tracking-tight py-8">
+                  <p className="text-foreground col-span-full text-center tracking-tight py-8">
                     You haven't created any notes yet. Start learning and jot down some thoughts!
                   </p>
                 )}

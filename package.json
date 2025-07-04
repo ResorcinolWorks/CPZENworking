@@ -4,6 +4,8 @@
   },
   "dependencies": {
     "@clerk/clerk-react": "^5.32.0",
+    "@fontsource/geist-mono": "^5.2.6",
+    "@fontsource/geist-sans": "^5.2.5",
     "@types/express": "^5.0.3",
     "express": "^5.1.0",
     "nodemon": "^3.1.10",

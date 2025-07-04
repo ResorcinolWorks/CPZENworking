@@ -1,13 +1,7 @@
-import {
-	Carousel,
-	CarouselContent,
-	CarouselItem,
-	CarouselNext,
-	CarouselPrevious,
-} from "@/components/ui/carousel";
 import { Card, CardContent } from "@/components/ui/card";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Quote, ThumbsUp } from "lucide-react";
+import Marquee from "@/components/magicui/marquee";
 
 const reviews = [
 	{
@@ -59,61 +53,67 @@ const Reviews = () => {
 		<section className="py-24 sm:py-32">
 			<div className="container">
 				<div className="text-center mb-16 max-w-3xl mx-auto">
-					<h2 className="text-4xl md:text-5xl font-bold mb-4 tracking-tight flex items-center justify-center gap-3 text-muted-foreground">
-						<ThumbsUp className="h-8 w-8" />
-						Loved by <span className="text-foreground">Coders</span> Everywhere
+					<h2 className="text-4xl md:text-5xl font-bold mb-4 tracking-tight flex items-center justify-center gap-3 text-foreground">
+						<ThumbsUp className="h-8 w-8" strokeWidth={2.5} />
+						Loved by <span className="text-primary">Coders</span> Everywhere
 					</h2>
-					<p className="text-lg text-muted-foreground tracking-tight">
+					<p className="text-lg text-foreground tracking-tight">
 						Here's what our users have to say about their experience with CpZen.
 					</p>
 				</div>
 
-				<Carousel
-					opts={{
-						align: "start",
-						loop: true,
-					}}
-					className="w-full max-w-4xl mx-auto"
-				>
-					<CarouselContent>
-						{reviews.map((review, index) => (
-							<CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
-								<div className="p-1 h-full">
-									<Card className="h-full shadow-lg hover:shadow-2xl hover:shadow-primary/20 transition-all duration-300 hover:scale-[1.02]">
-										<CardContent className="flex flex-col items-start p-6 text-left gap-2">
-											<div className="flex items-center gap-2 mb-2">
-												<Quote className="h-5 w-5 text-primary" />
-												<p className="font-bold text-lg tracking-tight">"{review.title}"</p>
-											</div>
-											<p className="text-muted-foreground text-sm mb-6 tracking-tight flex-1">
-												{review.description}
-											</p>
-											<div className="flex items-center gap-4 mt-auto">
-												<Avatar className="border-2 border-primary/20">
-													<AvatarImage
-														src={`https://i.pravatar.cc/150?u=${review.name}`}
-														alt={review.name}
-													/>
-													<AvatarFallback>{review.avatar}</AvatarFallback>
-												</Avatar>
-												<div>
-													<p className="font-semibold tracking-tight">{review.name}</p>
-													<p className="text-xs text-muted-foreground tracking-tight">
-														Verified User
-													</p>
-												</div>
-											</div>
-										</CardContent>
-									</Card>
-								</div>
-							</CarouselItem>
+				<div className="relative flex h-full w-full flex-col items-center justify-center overflow-hidden rounded-lg border bg-background py-20 md:shadow-xl">
+					<Marquee pauseOnHover className="[--duration:20s]">
+						{reviews.map((review) => (
+							<ReviewCard key={review.name} {...review} />
 						))}
-					</CarouselContent>
-					<CarouselPrevious />
-					<CarouselNext />
-				</Carousel>
+					</Marquee>
+					<div className="pointer-events-none absolute inset-y-0 left-0 w-1/3 bg-gradient-to-r from-white dark:from-background"></div>
+					<div className="pointer-events-none absolute inset-y-0 right-0 w-1/3 bg-gradient-to-l from-white dark:from-background"></div>
+				</div>
 			</div>
 		</section>
+	);
+};
+
+const ReviewCard = ({
+	name,
+	avatar,
+	title,
+	description,
+}: {
+	name: string;
+	avatar: string;
+	title: string;
+	description: string;
+}) => {
+	return (
+		<Card className="h-full shadow-lg hover:shadow-2xl hover:shadow-primary/20 transition-all duration-300 hover:scale-[1.02] mx-4 w-80">
+			<CardContent className="flex flex-col items-start p-6 text-left gap-2">
+				<div className="flex items-center gap-2 mb-2">
+					<Quote className="h-5 w-5 text-primary" />
+					<p className="font-bold text-lg tracking-tight">"{title}"</p>
+				</div>
+				<p className="text-foreground text-sm mb-6 tracking-tight flex-1">
+					{description}
+				</p>
+				<div className="flex items-center gap-4 mt-auto">
+					<Avatar className="border-2 border-primary/20">
+						<AvatarImage
+							src={`https://i.pravatar.cc/150?u=${name}`}
+							alt={name}
+						/>
+						<AvatarFallback>{avatar}</AvatarFallback>
+					</Avatar>
+					<div>
+						<p className="font-semibold tracking-tight">{name}</p>
+						<p className="text-xs text-foreground tracking-tight">
+							Verified User
+						</p>
+					</div>
+				</div>
+			</CardContent>
+		</Card>
 	);
 };
 

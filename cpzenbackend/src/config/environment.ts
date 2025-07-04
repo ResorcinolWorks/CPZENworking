@@ -1,3 +1,6 @@
+const rawFrontendUrls = process.env.FRONTEND_URL || 'http://localhost:8080';
+const frontendUrls = rawFrontendUrls.split(',').map(url => url.trim());
+
 export const config = {
   port: process.env.PORT || 3001,
   nodeEnv: process.env.NODE_ENV || 'development',
@@ -9,7 +12,7 @@ export const config = {
     webhookSecret: process.env.CLERK_WEBHOOK_SECRET,
   },
   frontend: {
-    url: process.env.FRONTEND_URL || 'http://localhost:8080',
+    urls: frontendUrls,
   },
 };
 
